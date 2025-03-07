@@ -1,7 +1,96 @@
-body {
-    background-color: #f0f0f0;
+/* Algemene styling */
+.section {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-h1 {
-    color: #333;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero sectie */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-video video {
+    width: 100%;
+    height: auto;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #e63946;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cta-btn:hover {
+    background: #c72e3e;
+}
+
+/* Features */
+.feature-items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature-item {
+    flex: 1;
+    text-align: center;
+}
+
+.feature-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* Ze Hebben Ons Vertrouwd - Logo slider */
+.trusted {
+    background: #f8f9fa;
+    padding: 40px 0;
+}
+
+.logo-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.logo-track {
+    display: flex;
+    gap: 20px;
+    animation: slide 15s linear infinite;
+}
+
+.logo-item img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Keyframes voor logo animatie */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }

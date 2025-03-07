@@ -24,3 +24,16 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
+
+Route::get('/Evenementen', function () {
+    return view('pages.Evenementen');
+})->name('Evenementen');
+
+Route::get('/wordlid', function () {
+    return view('pages.wordlid');
+})->name('pages.wordlid');
+
+Route::get('/diensten', function () {
+
+    return view('pages.diensten');
+})->name('diensten');
