@@ -1,96 +1,298 @@
-/* Algemene styling */
-.section {
-    text-align: center;
-    padding: 50px 20px;
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #363636;
 }
 
-/* Hero sectie */
+/* Hero Section */
 .hero {
     position: relative;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
+    overflow: hidden; /* Verbergt het gedeelte van de video dat buiten de viewport valt */
 }
 
-.hero-video video {
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100vh; /* Zorgt ervoor dat de video altijd het volledige scherm bedekt */
+    object-fit: cover; /* Zorgt ervoor dat de video het scherm bedekt zonder vervorming */
+    z-index: 1;
+    object-position: center; /* Zorgt ervoor dat het midden van de video altijd in beeld blijft */
 }
 
 .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    z-index: 10;
+    position: relative;
+    padding-top: 15vh; /* Beetje omhoog van de tekst */
+}
+
+.hero h1 {
+    font-size: 3.5rem; /* Kleinere tekst voor de titel */
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem; /* Kleinere tekst voor de paragraaf */
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .cta-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #e63946;
+    background-color: #fffc61;
     color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .cta-btn:hover {
-    background: #c72e3e;
+    background-color: #e65a4e;
 }
 
-/* Features */
+/* Section Styles */
+.section {
+    padding: 5rem 0;
+}
+
+.about, .features, .cta-section {
+    background-color: white;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Over Ons Styling */
+.about {
+    background-color: #f4f4f4;
+    padding: 6rem 0; /* Extra ruimte voor mooie uitstraling */
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about p:last-child {
+    font-weight: bold;
+    color: #ff6f61; /* Accent kleur voor de laatste tekst */
+}
+
+/* Functionaliteiten Sectie */
+.features {
+    background-color: #f9f9f9;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.features .section-description {
+    font-size: 1.2rem;
+    color: #777;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+}
+
 .feature-items {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
 }
 
 .feature-item {
-    flex: 1;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
     text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px); /* Verhoogt de kaart wanneer je erover beweegt */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Maakt de schaduw dieper */
+}
+
+.feature-item h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.feature-item p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 .feature-img {
     width: 100%;
-    max-width: 300px;
+    height: 200px;
     border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
 }
 
-/* Ze Hebben Ons Vertrouwd - Logo slider */
+/* Responsieve Styling voor Mobiel */
+@media (max-width: 1024px) {
+    .feature-items {
+        grid-template-columns: repeat(2, 1fr); /* Twee kolommen op medium schermen */
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-items {
+        grid-template-columns: 1fr; /* Eén kolom op kleine schermen */
+    }
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: #ff6f61;
+    color: white;
+    text-align: center;
+    padding: 4rem 0; /* Verklein de ruimte boven en onder de tekst */
+    border-radius: 10px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Schaduw voor meer diepte */
+}
+
+.cta-section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.cta-section p {
+    font-size: 1.2rem; /* Maak de tekst iets kleiner */
+    margin-bottom: 2rem; /* Verklein de ruimte onder de tekst */
+    color: #f8f8f8;
+    line-height: 1.6; /* Vergroot de ruimte tussen de regels voor betere leesbaarheid */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    background-color: #ff6f61;
+    color: #ffffff;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.3rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid #dac8c8; /* Rand rondom de knop */
+}
+
+.cta-btn:hover {
+    background-color: #ff6f61;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Schaduw voor de knop wanneer je erover beweegt */
+}
+
+/* Ze Hebben Ons Vertrouwd Sectie */
 .trusted {
-    background: #f8f9fa;
-    padding: 40px 0;
+    background-color: #f9f9f9;
+    padding: 5rem 0;
+    text-align: center;
 }
 
+.trusted h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Logo Slider Styling */
 .logo-slider {
-    width: 100%;
+    display: flex;
+    justify-content: flex-start;
     overflow: hidden;
     position: relative;
-    white-space: nowrap;
+    gap: 2rem;
+    animation: slide 20s linear infinite; /* Doorlopende animatie zonder pauze */
 }
 
-.logo-track {
-    display: flex;
-    gap: 20px;
-    animation: slide 15s linear infinite;
-}
-
-.logo-item img {
-    max-width: 150px;
+.logo-item {
+    flex: 0 0 auto;
+    width: 150px;
     height: auto;
 }
 
-/* Keyframes voor logo animatie */
+.logo-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Animatie voor de oneindige schuifbeweging */
 @keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    0% { transform: translateX(100%); }
+    50% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
