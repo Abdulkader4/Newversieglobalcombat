@@ -10,19 +10,20 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #363636;
+    background-color: #2c2c2c;
+    overflow-x: hidden;
 }
 
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    overflow: hidden; /* Verbergt het gedeelte van de video dat buiten de viewport valt */
+    overflow: hidden;
 }
 
 .hero-video {
@@ -30,26 +31,31 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Zorgt ervoor dat de video altijd het volledige scherm bedekt */
-    object-fit: cover; /* Zorgt ervoor dat de video het scherm bedekt zonder vervorming */
+    height: 100vh;
+    object-fit: cover;
     z-index: 1;
-    object-position: center; /* Zorgt ervoor dat het midden van de video altijd in beeld blijft */
+    object-position: center;
+    filter: brightness(0.5);
 }
 
 .hero-content {
     z-index: 10;
     position: relative;
-    padding-top: 15vh; /* Beetje omhoog van de tekst */
+    padding-top: 10vh;
+    animation: fadeInUp 1s ease-out;
 }
 
 .hero h1 {
-    font-size: 3.5rem; /* Kleinere tekst voor de titel */
+    font-size: 4rem;
     margin-bottom: 1rem;
+    letter-spacing: 3px;
+    color: #dddadd;
 }
 
 .hero p {
-    font-size: 1.2rem; /* Kleinere tekst voor de paragraaf */
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: #e9dde9; /* zachte perzik */
 }
 
 .cta-buttons {
@@ -59,59 +65,41 @@ body {
 }
 
 .cta-btn {
-    background-color: #fffc61;
-    color: white;
-    padding: 1rem 2rem;
+    background-color: #ff4e50; /* vurige koraal */
+    color: #fff;
+    padding: 1rem 2.5rem;
     font-size: 1.2rem;
+    font-weight: bold;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
 .cta-btn:hover {
-    background-color: #e65a4e;
-}
-
-/* Section Styles */
-.section {
-    padding: 5rem 0;
-}
-
-.about, .features, .cta-section {
-    background-color: white;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    text-align: center;
+    background-color: #ff0037; /* fris mintgroen */
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
 }
 
 /* Over Ons Styling */
 .about {
-    background-color: #f4f4f4;
-    padding: 6rem 0; /* Extra ruimte voor mooie uitstraling */
+    background-color: #1e1e1e;
+    padding: 6rem 0;
     text-align: center;
+    color: #050505;
 }
 
 .about h2 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    color: #333;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    color: #ffffff;
 }
 
 .about p {
     font-size: 1.2rem;
-    color: #555;
+    color: #ddd;
     line-height: 1.8;
     margin-bottom: 2rem;
     max-width: 800px;
@@ -121,12 +109,12 @@ h2 {
 
 .about p:last-child {
     font-weight: bold;
-    color: #ff6f61; /* Accent kleur voor de laatste tekst */
+    color: #c53d3d;
 }
 
 /* Functionaliteiten Sectie */
 .features {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     padding: 6rem 0;
     text-align: center;
 }
@@ -134,154 +122,129 @@ h2 {
 .features h2 {
     font-size: 3.5rem;
     margin-bottom: 2rem;
-    color: #333;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    color: #000000c2;
 }
 
 .features .section-description {
     font-size: 1.2rem;
-    color: #777;
+    color: #303030a9;
     line-height: 1.8;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem;
 }
 
 .feature-items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
-    margin-top: 3rem;
 }
 
 .feature-item {
-    padding: 2rem;
-    background-color: #ffffff;
-    border-radius: 10px;
+    padding: 2.5rem 1.5rem;
+    background-color: #00000013; /* mintgroen */
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
 }
 
 .feature-item:hover {
-    transform: translateY(-10px); /* Verhoogt de kaart wanneer je erover beweegt */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Maakt de schaduw dieper */
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
 }
 
 .feature-item h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #333;
-    font-weight: bold;
+    color: #000000;
 }
 
 .feature-item p {
     font-size: 1.1rem;
-    color: #555;
+    color: #333;
     line-height: 1.6;
-    margin-bottom: 1rem;
 }
 
 .feature-img {
     width: 100%;
     height: 200px;
-    border-radius: 10px;
+    border-radius: 12px;
     object-fit: cover;
     margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
 }
 
-/* Responsieve Styling voor Mobiel */
-@media (max-width: 1024px) {
-    .feature-items {
-        grid-template-columns: repeat(2, 1fr); /* Twee kolommen op medium schermen */
-    }
-}
-
-@media (max-width: 768px) {
-    .feature-items {
-        grid-template-columns: 1fr; /* Eén kolom op kleine schermen */
-    }
+.feature-item:hover .feature-img {
+    transform: scale(1.05);
 }
 
 /* CTA Section */
 .cta-section {
-    background-color: #ff6f61;
-    color: white;
+    background: linear-gradient(135deg, #c734348a, #333333);
+    color: #fff;
     text-align: center;
-    padding: 4rem 0; /* Verklein de ruimte boven en onder de tekst */
-    border-radius: 10px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Schaduw voor meer diepte */
+    padding: 5rem 2rem;
+    border-radius: 20px;
+    margin: 4rem auto;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .cta-section h2 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    color: white;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
 }
 
 .cta-section p {
-    font-size: 1.2rem; /* Maak de tekst iets kleiner */
-    margin-bottom: 2rem; /* Verklein de ruimte onder de tekst */
-    color: #f8f8f8;
-    line-height: 1.6; /* Vergroot de ruimte tussen de regels voor betere leesbaarheid */
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-btn {
-    background-color: #ff6f61;
-    color: #ffffff;
-    padding: 1.2rem 2.5rem;
     font-size: 1.3rem;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
-    border: 2px solid #dac8c8; /* Rand rondom de knop */
+    margin-bottom: 2.5rem;
 }
 
-.cta-btn:hover {
-    background-color: #ff6f61;
-    color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Schaduw voor de knop wanneer je erover beweegt */
+.cta-section .cta-btn {
+    background-color: #fff;
+    color: #3a3535d0;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.cta-section .cta-btn:hover {
+    background-color: #ffe7ef;
+    color: #ff4e51d0;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25);
 }
 
 /* Ze Hebben Ons Vertrouwd Sectie */
 .trusted {
-    background-color: #f9f9f9;
+    background-color: #1e1e1e;
     padding: 5rem 0;
     text-align: center;
+    color: #fff;
 }
 
 .trusted h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
-    color: #333;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    color: #ffffffe1;
 }
 
-/* Logo Slider Styling */
 .logo-slider {
     display: flex;
     justify-content: flex-start;
-    overflow: hidden;
-    position: relative;
     gap: 2rem;
-    animation: slide 20s linear infinite; /* Doorlopende animatie zonder pauze */
+    animation: slide 25s linear infinite;
+    padding: 0 2rem;
 }
 
 .logo-item {
     flex: 0 0 auto;
     width: 150px;
-    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 .logo-item img {
@@ -290,9 +253,56 @@ h2 {
     object-fit: contain;
 }
 
-/* Animatie voor de oneindige schuifbeweging */
+.logo-item:hover {
+    opacity: 1;
+}
+
 @keyframes slide {
     0% { transform: translateX(100%); }
-    50% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsieve Styling */
+@media (max-width: 1024px) {
+    .feature-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .cta-section {
+        padding: 4rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-items {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-section h2 {
+        font-size: 2.5rem;
+    }
 }

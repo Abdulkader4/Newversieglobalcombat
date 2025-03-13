@@ -31,6 +31,8 @@
         <p>Bij Global Combat draait alles om het verbinden van vechters wereldwijd. Of je nu een amateur bent die zijn eerste stappen in de ring zet, of een ervaren wereldkampioen, wij bieden een platform waar jij kunt groeien, leren en je netwerk kunt uitbreiden. Met geavanceerde tools, betrouwbare statistieken en een internationaal netwerk helpen we je om je doelen te bereiken, of je nu traint, promoot of deelneemt aan toernooien.</p>
         <p>Het is onze missie om de vechtsportwereld één plek te geven waar iedereen, ongeacht afkomst of ervaring, gelijke kansen krijgt om te bloeien. Samen creëren we een wereldwijd ecosysteem dat draait om samenwerking, innovatie en respect.</p>
     </div>
+    <br>
+
 </section>
 
 <!-- Functionaliteiten Sectie -->
